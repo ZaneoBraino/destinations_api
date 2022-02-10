@@ -7,7 +7,6 @@ var cors = require("cors");
 const PORT = process.env.PORT || 3000;
 
 //console.log(db);
-server.use(cors());
 
 const { cities } = require("./db");
 //console.log(citiesDB);
@@ -18,6 +17,7 @@ server.listen(PORT, () => {
   //Logging that you've connected to the local site
   console.log(`You are connected to port ${PORT}`);
 });
+server.use(cors());
 
 //Get your created data from your data bases
 server.get("/", (req, res) => {
