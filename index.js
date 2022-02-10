@@ -3,7 +3,7 @@ const db = require("./db");
 //set up the express functions/server via a const
 const express = require("express");
 //creating a local port
-const port = 3000;
+const port = process.env.port || 3000;
 
 //console.log(db);
 
