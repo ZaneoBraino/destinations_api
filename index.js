@@ -3,7 +3,7 @@ const db = require("./db");
 //set up the express functions/server via a const
 const express = require("express");
 //creating a local port
-const port = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
 //console.log(db);
 
@@ -12,15 +12,15 @@ const { cities } = require("./db");
 
 //create express server
 const server = express();
-server.listen(port, () => {
+server.listen(PORT, () => {
   //Logging that you've connected to the local site
-  console.log(`You are connected to port ${port}`);
+  console.log(`You are connected to port ${PORT}`);
 });
 
 //Get your created data from your data bases
-// server.get("/", (req, res) => {
-//   res.send(db);
-// });
+server.get("/", (req, res) => {
+  res.send(db);
+});
 
 server.get("/", (req, res) => {
   res.send(cities);
