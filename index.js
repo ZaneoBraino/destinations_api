@@ -2,10 +2,12 @@
 const db = require("./db");
 //set up the express functions/server via a const
 const express = require("express");
+var cors = require("cors");
 //creating a local port or use a port given to us
 const PORT = process.env.PORT || 3000;
 
 //console.log(db);
+server.use(cors());
 
 const { cities } = require("./db");
 //console.log(citiesDB);
